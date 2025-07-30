@@ -1,0 +1,73 @@
+<!-- Header -->
+<header class="bg-[#0e2525] text-white py-4 text-center">
+    <h1 class="text-3xl font-bold">Activity Recommender</h1>
+    <p class="text-lg">Find the perfect activity based on your preferences</p>
+</header>
+
+<!-- User Preferences Form -->
+<main class="p-6">
+    <form id="preferencesForm" class="grid md:grid-cols-2 gap-6 bg-white shadow-lg rounded-lg p-6">
+        <!-- Budget -->
+        <div>
+            <label for="budget" class="block font-semibold mb-2">Budget ($):</label>
+            <input type="number" id="budget" name="budget" class="w-full p-2 border rounded"
+                placeholder="Enter your budget" required>
+        </div>
+
+        <!-- Weather -->
+        <div>
+            <label for="weather" class="block font-semibold mb-2">Preferred Weather:</label>
+            <select id="weather" name="weather" class="w-full p-2 border rounded" required>
+                <option value="">Select</option>
+                <option value="warm">Warm</option>
+                <option value="cold">Cold</option>
+                <option value="mild">Mild</option>
+            </select>
+        </div>
+
+        <!-- Activities -->
+        <div>
+            <label for="activities" class="block font-semibold mb-2">Activity Interests:</label>
+            <input type="text" id="activities" name="activities" class="w-full p-2 border rounded"
+                placeholder="e.g., beach, hiking, culture" required>
+        </div>
+
+        <!-- Longitude -->
+        <div>
+            <label for="longitude" class="block font-semibold mb-2">Longitude:</label>
+            <input type="number" step="any" id="longitude" name="longitude" class="w-full p-2 border rounded"
+                placeholder="e.g., 122.56" required>
+        </div>
+
+        <!-- Latitude -->
+        <div>
+            <label for="latitude" class="block font-semibold mb-2">Latitude:</label>
+            <input type="number" step="any" id="latitude" name="latitude" class="w-full p-2 border rounded"
+                placeholder="e.g., 13.41" required>
+        </div>
+
+        <!-- Submit -->
+        <div class="md:col-span-2 text-center">
+            <button type="submit" class="bg-[#0e2525] text-white py-2 px-6 rounded-lg bg-[#0e2525]">Get
+                Recommendations</button>
+        </div>
+    </form>
+
+    <!-- Loading & Error Messages -->
+    <div id="loading" class="hidden text-center mt-6 bg-[#0e2525]">Loading recommendations...</div>
+    <div id="error" class="hidden text-center mt-6 text-red-600">Error fetching recommendations. Please try again.</div>
+
+    <!-- Results Section -->
+    <section id="results" class="mt-8 grid md:grid-cols-3 gap-6"></section>
+</main>
+
+<script src="script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+<script src="/routerHandle.js"></script>
